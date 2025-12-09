@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Репетитор по Математике и Информатике</title>
-    <!-- Подключение шрифта Inter (наиболее близкий к Apple San Francisco) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Олег Плешков | Преподаватель математики и информатики</title>
+    <!-- Шрифт Inter (Apple Style) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- НАСТРОЙКИ СТИЛЯ (Apple Feel) --- */
+        /* --- НАСТРОЙКИ СТИЛЯ (Apple aesthetics + Aeroflot colors) --- */
         :root {
-            /* Палитра Аэрофлот в современном исполнении */
+            /* Цвета */
             --af-blue-dark: #003565; 
             --af-blue-accent: #005EB8;
             --af-orange: #FF6600;
             --af-orange-hover: #E05A00;
             
-            /* Apple-like neutrals */
-            --bg-body: #F5F5F7; /* Фирменный светло-серый фон Apple */
+            /* Фоны и текст */
+            --bg-body: #F5F5F7; 
             --bg-card: #FFFFFF;
             --text-main: #1D1D1F;
             --text-secondary: #86868B;
             
-            --radius: 24px; /* Крупные скругления */
-            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Плавная анимация */
+            --radius: 24px;
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         * {
@@ -38,10 +38,10 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-body);
             color: var(--text-main);
-            line-height: 1.5;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -49,115 +49,133 @@
         ul { list-style: none; }
 
         .container {
-            max-width: 1080px; /* Немного уже для фокуса на контенте */
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* --- НАВИГАЦИЯ (Floating Glass) --- */
+        /* --- НАВИГАЦИЯ --- */
         header {
             position: fixed;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: auto;
-            max-width: 90%;
             z-index: 1000;
+            width: auto;
+            max-width: 95%;
         }
 
         nav {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             padding: 12px 30px;
-            border-radius: 100px; /* Pill shape */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 100px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         .nav-menu {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             font-size: 0.9rem;
-            font-weight: 500;
+            font-weight: 600;
+            align-items: center;
         }
 
         .nav-link {
             color: var(--text-main);
             transition: var(--transition);
-            opacity: 0.8;
         }
 
         .nav-link:hover {
             color: var(--af-blue-accent);
-            opacity: 1;
         }
 
-        /* --- ГЛАВНЫЙ ЭКРАН (Big Typography) --- */
+        /* --- ГЛАВНЫЙ ЭКРАН --- */
         .hero {
             height: 100vh;
-            min-height: 700px;
+            min-height: 750px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding-top: 80px;
-            background: radial-gradient(circle at 50% 50%, #ffffff 0%, var(--bg-body) 100%);
+            color: #ffffff;
+            position: relative;
+            /* Фон: синий градиент + формулы */
+            background: linear-gradient(135deg, rgba(0, 53, 101, 0.92) 0%, rgba(0, 94, 184, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem); /* Адаптивный огромный шрифт */
-            font-weight: 700;
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 800;
             line-height: 1.1;
             margin-bottom: 24px;
-            background: linear-gradient(135deg, var(--af-blue-dark) 0%, var(--af-blue-accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             letter-spacing: -0.02em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
             animation: fadeUp 0.8s ease-out;
         }
 
         .hero p {
             font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 750px;
+            margin: 0 auto 40px auto;
             font-weight: 400;
             animation: fadeUp 1s ease-out;
         }
 
-        /* Кнопка в стиле Apple Action */
+        .hero-badges {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeUp 1.1s ease-out;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             background-color: var(--af-orange);
             color: #fff;
-            padding: 16px 32px;
+            padding: 18px 40px;
             border-radius: 100px;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.1rem;
             transition: var(--transition);
-            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
             animation: fadeUp 1.2s ease-out;
+            cursor: pointer;
+            border: none;
         }
 
         .btn:hover {
             background-color: var(--af-orange-hover);
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 102, 0, 0.5);
         }
 
-        /* --- СЕТКА УСЛУГ (Bento Grid) --- */
-        .section {
-            padding: 120px 0;
-        }
+        /* --- СТАНДАРТНЫЕ СЕКЦИИ --- */
+        .section { padding: 100px 0; }
         
-        .section-header {
-            margin-bottom: 60px;
-            text-align: left; /* Apple style often left-aligned or perfectly centered headers */
-        }
+        .section-header { text-align: center; margin-bottom: 60px; }
         
         .section-title {
             font-size: 2.5rem;
@@ -166,183 +184,261 @@
             letter-spacing: -0.01em;
             margin-bottom: 15px;
         }
-
+        
         .section-desc {
-            font-size: 1.1rem;
             color: var(--text-secondary);
-            max-width: 500px;
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto;
         }
 
-        /* Bento Grid Layout */
-        .services-grid {
+        /* --- ОБО МНЕ (Стиль Apple Bento) --- */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-rows: auto auto;
+            gap: 24px;
+        }
+
+        .bento-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+        }
+
+        .bento-main {
+            grid-row: span 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bento-main h2 {
+            font-size: 2.2rem;
+            color: var(--af-blue-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .bento-main p {
+            margin-bottom: 15px;
+            color: #444;
+            font-size: 1.1rem;
+        }
+
+        .bento-photo {
+            height: 350px;
+            /* ЗАМЕНИТЕ ЭТУ ССЫЛКУ НА ВАШЕ РЕАЛЬНОЕ ФОТО */
+            background: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80') center/cover;
+            border-radius: var(--radius);
+            position: relative;
+        }
+        
+        /* Бейдж на фото */
+        .photo-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.9);
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--af-blue-dark);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .bento-stats {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .stat-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--af-orange);
+            min-width: 80px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        /* --- КАРЬЕРА И ОПЫТ (Timeline упрощенный) --- */
+        .career-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
-            height: 500px; /* Фиксированная высота для десктопа */
+            margin-top: 24px;
+        }
+
+        .career-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .career-icon {
+            font-size: 1.5rem;
+            color: var(--af-blue-accent);
+            margin-bottom: 15px;
+        }
+
+        .career-title {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .career-sub {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- ОБРАЗОВАТЕЛЬНЫЕ ТРЕКИ --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
         .service-card {
-            position: relative;
+            background: var(--bg-card);
             border-radius: var(--radius);
-            overflow: hidden;
-            background: #000;
-            cursor: pointer;
+            padding: 10px;
+            text-align: center;
             transition: var(--transition);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            height: 100%;
         }
 
-        /* Карточка 1 - Большая (ЕГЭ) */
-        .card-lg {
-            grid-column: span 2; 
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
         }
 
-        .card-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .card-image-wrapper {
+            width: 100%;
+            height: 200px;
+            border-radius: 18px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .card-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-            opacity: 0.7;
+            transition: transform 0.6s ease;
         }
 
-        .service-card:hover .card-bg {
-            transform: scale(1.05);
-            opacity: 0.5;
+        .service-card:hover .card-image-wrapper img {
+            transform: scale(1.1);
         }
 
         .card-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            padding: 32px;
-            width: 100%;
-            z-index: 2;
-            color: white;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 0 15px 25px 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .card-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .card-content p {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.4;
-        }
-
-        /* --- ОБО МНЕ (Clean Layout) --- */
-        .about-wrapper {
-            background-color: var(--bg-card);
-            border-radius: var(--radius);
-            padding: 60px;
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 24px;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
             color: var(--af-blue-dark);
         }
 
-        .about-text p {
-            margin-bottom: 20px;
+        .card-content p {
+            font-size: 0.95rem;
             color: var(--text-secondary);
-            font-size: 1.05rem;
-        }
-
-        .stats-row {
-            display: flex;
-            gap: 40px;
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-        }
-
-        .stat-item h3 {
-            font-size: 2rem;
-            color: var(--af-orange);
-            font-weight: 700;
-        }
-
-        .stat-item span {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        .about-img {
-            flex: 1;
-            height: 400px;
-            border-radius: var(--radius);
-            /* Фото репетитора */
-            background: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center/cover;
+            line-height: 1.5;
         }
 
         /* --- КОНТАКТЫ --- */
         .contacts {
-            text-align: center;
-            padding-bottom: 100px;
+            background-color: #fff;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .contact-grid {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            margin-top: 40px;
-            flex-wrap: wrap;
+            width: 100%;
+            max-width: 900px;
         }
 
         .contact-card {
-            background: var(--bg-card);
-            padding: 24px 32px;
-            border-radius: 16px;
             display: flex;
             align-items: center;
-            gap: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            gap: 20px;
+            padding: 24px;
+            background: #F9F9FB;
+            border-radius: 20px;
             transition: var(--transition);
             border: 1px solid transparent;
         }
 
         .contact-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0,0,0,0.05);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border-color: #eee;
+            transform: translateY(-3px);
         }
 
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--af-blue-accent);
-        }
-        
-        .contact-info {
-            text-align: left;
-        }
-        
-        .contact-label {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-bottom: 2px;
-        }
-        
-        .contact-value {
-            font-weight: 600;
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            background-color: #fff;
             color: var(--af-blue-dark);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        .contact-card:hover .icon-box.phone { color: #25D366; } /* WhatsApp colorish */
+        .contact-card:hover .icon-box.mail { color: var(--af-orange); }
+
+        .contact-info h4 {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        .contact-info span {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
         }
 
         /* --- ФУТЕР --- */
@@ -350,7 +446,8 @@
             padding: 40px 0;
             text-align: center;
             color: var(--text-secondary);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            background-color: var(--bg-body);
             border-top: 1px solid #e5e5e5;
         }
 
@@ -362,29 +459,15 @@
 
         /* --- МОБИЛЬНАЯ ВЕРСИЯ --- */
         @media (max-width: 900px) {
-            .hero h1 { font-size: 3rem; }
-            .services-grid {
-                grid-template-columns: 1fr;
-                height: auto;
-            }
-            .card-lg { grid-column: auto; }
-            .service-card { height: 300px; }
-            
-            .about-wrapper {
-                flex-direction: column;
-                padding: 30px;
-            }
-            .about-img {
-                width: 100%;
-                height: 300px;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            nav { padding: 10px 20px; }
-            .nav-menu { gap: 15px; font-size: 0.8rem; }
-            .hero h1 { font-size: 2.2rem; }
-            .stats-row { gap: 20px; }
+            .hero h1 { font-size: 2.5rem; }
+            .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+            .bento-main { grid-row: auto; order: 2; }
+            .bento-photo { order: 1; height: 300px; }
+            .bento-stats { order: 3; }
+            .career-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
+            .nav-menu { display: none; } /* Можно добавить JS для меню, пока скрываем для чистоты */
+            header { top: 10px; max-width: 90%; }
         }
     </style>
 </head>
@@ -394,7 +477,8 @@
     <header>
         <nav>
             <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">Обо мне</a></li>
+                <li><a href="#about" class="nav-link">Об авторе</a></li>
+                <li><a href="#experience" class="nav-link">Опыт</a></li>
                 <li><a href="#services" class="nav-link">Программа</a></li>
                 <li><a href="#contacts" class="nav-link">Контакты</a></li>
             </ul>
@@ -404,79 +488,120 @@
     <!-- Главный экран -->
     <section class="hero">
         <div class="container">
-            <h1>Твой потенциал.<br>Раскрытый на 100%</h1>
-            <p>Математика и Информатика. Системная подготовка, глубокое понимание предмета и уверенность на экзаменах.</p>
-            <a href="#contacts" class="btn">Записаться на диагностику</a>
+            <!-- Бейджи для статуса -->
+            <div class="hero-badges">
+                <div class="badge">МГУ им. Ломоносова</div>
+                <div class="badge">Высшая категория</div>
+                <div class="badge">International Tutor</div>
+            </div>
+
+            <h1>Математика и Информатика.<br>Системный подход.</h1>
+            <p>Преподаватель высшей категории. Ex-CEO с опытом управления международным бизнесом. Готовлю победителей олимпиад и студентов ведущих вузов мира.</p>
+            <a href="#contacts" class="btn">Связаться со мной</a>
         </div>
     </section>
 
-    <!-- Услуги (Bento Grid) -->
+    <!-- Обо мне (Bento Grid) -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="bento-grid">
+                <!-- Основной текст -->
+                <div class="bento-card bento-main">
+                    <h2>Олег Плешков</h2>
+                    <p>Я преподаватель высшей категории по математике и информатике. Выпускник факультета <strong>ВМК МГУ им. Ломоносова</strong>.</p>
+                    <p>Мой подход сочетает строгую академическую базу и реальный бизнес-опыт. С 2007 по 2020 год я прошел путь от менеджера до <strong>CEO</strong> крупной компании (клиенты: Аэрофлот, PepsiCo, X5 Retail Group).</p>
+                    <p>Сегодня я занимаюсь тем, что люблю больше всего — учу думать. Мои ученики живут в России, США, Испании, Австрии, Германии и на Кипре.</p>
+                </div>
+
+                <!-- Фото -->
+                <div class="bento-card bento-photo">
+                    <div class="photo-badge">Ларнака, Кипр</div>
+                </div>
+
+                <!-- Статистика -->
+                <div class="bento-card bento-stats">
+                    <div class="stat-row">
+                        <span class="stat-number">13</span>
+                        <span class="stat-label">Лет опыта<br>в топ-менеджменте</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-label">Лет онлайн<br>преподавания</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-number">MS</span>
+                        <span class="stat-label">Applied Math<br>МГУ (1994)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Сетка опыта (Career Grid) -->
+            <div id="experience" class="career-grid">
+                <div class="career-card">
+                    <i class="fas fa-chalkboard-teacher career-icon"></i>
+                    <h3 class="career-title">Foxford & Online</h3>
+                    <span class="career-sub">2015 — Present</span>
+                    <p style="font-size: 0.9rem; color: #666;">Преподаватель высшей категории. Подготовка к ЕГЭ, ОГЭ, олимпиадам. Спикер форума "Билингвы от А до Я".</p>
+                </div>
+                <div class="career-card">
+                    <i class="fas fa-briefcase career-icon"></i>
+                    <h3 class="career-title">CEO / Director</h3>
+                    <span class="career-sub">AMI NETWORK (2007-2020)</span>
+                    <p style="font-size: 0.9rem; color: #666;">Управление штатом 40+ человек. Антикризисное управление (2008). Работа с банками и ритейлом.</p>
+                </div>
+                <div class="career-card">
+                    <i class="fas fa-globe-americas career-icon"></i>
+                    <h3 class="career-title">International</h3>
+                    <span class="career-sub">Global Students</span>
+                    <p style="font-size: 0.9rem; color: #666;">Разработка программ для одаренных детей (США, Европа). Менторство для поступления в топ-вузы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Образовательные треки -->
     <section id="services" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Образовательные треки</h2>
-                <p class="section-desc">Выберите направление, которое соответствует вашим целям.</p>
+                <h2 class="section-title">Образовательные направления</h2>
+                <p class="section-desc">Комплексная подготовка на стыке наук и практики</p>
             </div>
 
             <div class="services-grid">
-                <!-- Большая карточка: ЕГЭ -->
-                <div class="service-card card-lg">
-                    <!-- Изображение: серьезная учеба, библиотека или экзамен -->
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="ЕГЭ" class="card-bg">
-                    <div class="card-content">
-                        <h3>Подготовка к ЕГЭ</h3>
-                        <p>Профильная математика и информатика. Стратегии решения второй части и разбор всех критериев оценки.</p>
-                    </div>
-                </div>
-
-                <!-- Карточка: ОГЭ -->
+                <!-- Карточка 1 -->
                 <div class="service-card">
-                    <!-- Изображение: школьники, тетради -->
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="ОГЭ" class="card-bg">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Математика">
+                    </div>
                     <div class="card-content">
-                        <h3>ОГЭ (9 класс)</h3>
-                        <p>Фундаментальная база. Закрываем пробелы и выходим на твердую «5».</p>
+                        <h3>Математика & Олимпиады</h3>
+                        <p>ЕГЭ, ОГЭ (профиль). Подготовка к перечневым олимпиадам. Методы решения задач с параметрами.</p>
                     </div>
                 </div>
 
-                <!-- Карточка: Олимпиады -->
+                <!-- Карточка 2 -->
                 <div class="service-card">
-                    <!-- Изображение: кубок, сложные формулы, абстракция -->
-                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Олимпиады" class="card-bg">
+                    <div class="card-image-wrapper">
+                        <!-- Картинка Информатика -->
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Информатика">
+                    </div>
                     <div class="card-content">
-                        <h3>Олимпиадная математика</h3>
-                        <p>Физтех, Ломоносов, Высшая проба. Решение задач повышенной сложности.</p>
+                        <h3>Информатика</h3>
+                        <p>Программирование, алгоритмы, КЕГЭ. Практические аспекты сдачи экзаменов на максимальный балл.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Обо мне -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="about-wrapper">
-                <div class="about-text">
-                    <h2>Кто ваш преподаватель?</h2>
-                    <p>Привет, меня зовут Александр. Я верю, что математика — это не зазубривание формул, а красивый язык логики. Моя методика строится на понимании "почему это работает так", а не "как это просто решить".</p>
-                    <p>Выпускник МГУ с отличием. За 7 лет практики я выработал систему, которая позволяет ученикам любого уровня достигать максимальных для себя результатов.</p>
-                    
-                    <div class="stats-row">
-                        <div class="stat-item">
-                            <h3>7+</h3>
-                            <span>Лет опыта</span>
-                        </div>
-                        <div class="stat-item">
-                            <h3>200+</h3>
-                            <span>Поступивших</span>
-                        </div>
-                        <div class="stat-item">
-                            <h3>85</h3>
-                            <span>Ср. балл</span>
-                        </div>
+                <!-- Карточка 3 -->
+                <div class="service-card">
+                    <div class="card-image-wrapper">
+                        <!-- Физика/Наука -->
+                        <img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Физика">
+                    </div>
+                    <div class="card-content">
+                        <h3>Физика</h3>
+                        <p>Школьный курс и экзамены. Понимание физических процессов через математический аппарат.</p>
                     </div>
                 </div>
-                <div class="about-img"></div>
             </div>
         </div>
     </section>
@@ -484,40 +609,48 @@
     <!-- Контакты -->
     <section id="contacts" class="section contacts">
         <div class="container">
-            <h2 class="section-title">Свяжитесь со мной</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 30px;">Открыт набор на новый учебный год. Пишите в любой удобный мессенджер.</p>
+            <div class="section-header">
+                <h2 class="section-title">Связаться со мной</h2>
+                <p class="section-desc">Олег Плешков. Ларнака, Кипр.</p>
+            </div>
             
-            <div class="contact-grid">
-                <a href="https://t.me/username" target="_blank" class="contact-card">
-                    <i class="fab fa-telegram-plane contact-icon"></i>
-                    <div class="contact-info">
-                        <span class="contact-label">Telegram</span>
-                        <span class="contact-value">@alex_tutor</span>
-                    </div>
-                </a>
+            <div class="contact-container">
+                <div class="contact-grid">
+                    <!-- Phone/WhatsApp -->
+                    <a href="tel:+35797815112" class="contact-card">
+                        <div class="icon-box phone"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-info">
+                            <h4>Телефон / WhatsApp</h4>
+                            <span>+357 97 815112</span>
+                        </div>
+                    </a>
 
-                <a href="https://wa.me/79991234567" target="_blank" class="contact-card">
-                    <i class="fab fa-whatsapp contact-icon"></i>
-                    <div class="contact-info">
-                        <span class="contact-label">WhatsApp</span>
-                        <span class="contact-value">Написать</span>
-                    </div>
-                </a>
+                    <!-- Email -->
+                    <a href="mailto:pleshkov@inbox.ru" class="contact-card">
+                        <div class="icon-box mail"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-info">
+                            <h4>Email</h4>
+                            <span>pleshkov@inbox.ru</span>
+                        </div>
+                    </a>
 
-                <a href="tel:+79991234567" class="contact-card">
-                    <i class="fas fa-phone-alt contact-icon"></i>
-                    <div class="contact-info">
-                        <span class="contact-label">Телефон</span>
-                        <span class="contact-value">+7 (999) 123-45-67</span>
+                    <!-- Location -->
+                    <div class="contact-card">
+                        <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-info">
+                            <h4>Локация</h4>
+                            <span>Ларнака, Кипр</span>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023. Образовательные услуги. Дизайн inspired by Apple aesthetics.</p>
+            <p>&copy; 2025 Oleg Pleshkov. Teacher & Mentor.</p>
+            <p style="font-size: 0.75rem; color: #aaa; margin-top: 5px;">Travelling • Photography • Skiing</p>
         </div>
     </footer>
 
