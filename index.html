@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Олег Плешков | Преподаватель математики и информатики</title>
+    <title>Плешков Олег Александрович | Преподаватель</title>
     <!-- Шрифт Inter (Apple Style) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- НАСТРОЙКИ СТИЛЯ (Apple aesthetics + Aeroflot colors) --- */
+        /* --- НАСТРОЙКИ СТИЛЯ --- */
         :root {
             /* Цвета */
             --af-blue-dark: #003565; 
@@ -103,7 +103,6 @@
             text-align: center;
             color: #ffffff;
             position: relative;
-            /* Фон: синий градиент + формулы */
             background: linear-gradient(135deg, rgba(0, 53, 101, 0.92) 0%, rgba(0, 94, 184, 0.85) 100%),
                         url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -174,9 +173,7 @@
 
         /* --- СТАНДАРТНЫЕ СЕКЦИИ --- */
         .section { padding: 100px 0; }
-        
         .section-header { text-align: center; margin-bottom: 60px; }
-        
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -184,7 +181,6 @@
             letter-spacing: -0.01em;
             margin-bottom: 15px;
         }
-        
         .section-desc {
             color: var(--text-secondary);
             font-size: 1.15rem;
@@ -192,50 +188,42 @@
             margin: 0 auto;
         }
 
-        /* --- ОБО МНЕ (Стиль Apple Bento) --- */
+        /* --- ОБО МНЕ (Bento) --- */
         .bento-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             grid-template-rows: auto auto;
             gap: 24px;
         }
-
         .bento-card {
             background: var(--bg-card);
             border-radius: var(--radius);
             padding: 40px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.03);
         }
-
         .bento-main {
             grid-row: span 2;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-
         .bento-main h2 {
             font-size: 2.2rem;
             color: var(--af-blue-dark);
             margin-bottom: 20px;
             line-height: 1.2;
         }
-
         .bento-main p {
             margin-bottom: 15px;
             color: #444;
             font-size: 1.1rem;
         }
-
         .bento-photo {
             height: 350px;
-            /* ЗАМЕНИТЕ ЭТУ ССЫЛКУ НА ВАШЕ РЕАЛЬНОЕ ФОТО */
             background: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80') center/cover;
             border-radius: var(--radius);
             position: relative;
         }
-        
-        /* Бейдж на фото */
         .photo-badge {
             position: absolute;
             bottom: 20px;
@@ -247,27 +235,23 @@
             color: var(--af-blue-dark);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
         .bento-stats {
             display: flex;
             flex-direction: column;
             justify-content: center;
             gap: 20px;
         }
-
         .stat-row {
             display: flex;
             align-items: center;
             gap: 20px;
         }
-        
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
             color: var(--af-orange);
             min-width: 80px;
         }
-        
         .stat-label {
             font-size: 1rem;
             color: var(--text-secondary);
@@ -275,33 +259,29 @@
             font-weight: 500;
         }
 
-        /* --- КАРЬЕРА И ОПЫТ (Timeline упрощенный) --- */
+        /* --- КАРЬЕРА И ОПЫТ --- */
         .career-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
             margin-top: 24px;
         }
-
         .career-card {
             background: #fff;
             padding: 30px;
             border-radius: var(--radius);
             border: 1px solid rgba(0,0,0,0.05);
         }
-
         .career-icon {
             font-size: 1.5rem;
             color: var(--af-blue-accent);
             margin-bottom: 15px;
         }
-
         .career-title {
             font-weight: 700;
             margin-bottom: 5px;
             color: var(--text-main);
         }
-
         .career-sub {
             font-size: 0.9rem;
             color: var(--text-secondary);
@@ -315,7 +295,6 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
-
         .service-card {
             background: var(--bg-card);
             border-radius: var(--radius);
@@ -328,12 +307,10 @@
             overflow: hidden;
             height: 100%;
         }
-
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 50px rgba(0,0,0,0.08);
         }
-
         .card-image-wrapper {
             width: 100%;
             height: 200px;
@@ -342,18 +319,15 @@
             margin-bottom: 20px;
             position: relative;
         }
-
         .card-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
-
         .service-card:hover .card-image-wrapper img {
             transform: scale(1.1);
         }
-
         .card-content {
             padding: 0 15px 25px 15px;
             flex-grow: 1;
@@ -361,14 +335,12 @@
             flex-direction: column;
             align-items: center;
         }
-
         .card-content h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
             font-weight: 700;
             color: var(--af-blue-dark);
         }
-
         .card-content p {
             font-size: 0.95rem;
             color: var(--text-secondary);
@@ -376,16 +348,12 @@
         }
 
         /* --- КОНТАКТЫ --- */
-        .contacts {
-            background-color: #fff;
-        }
-        
+        .contacts { background-color: #fff; }
         .contact-container {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -393,7 +361,6 @@
             width: 100%;
             max-width: 900px;
         }
-
         .contact-card {
             display: flex;
             align-items: center;
@@ -404,14 +371,12 @@
             transition: var(--transition);
             border: 1px solid transparent;
         }
-
         .contact-card:hover {
             background: #fff;
             box-shadow: 0 10px 30px rgba(0,0,0,0.06);
             border-color: #eee;
             transform: translateY(-3px);
         }
-
         .icon-box {
             width: 50px;
             height: 50px;
@@ -424,17 +389,14 @@
             color: var(--af-blue-dark);
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
-        
-        .contact-card:hover .icon-box.phone { color: #25D366; } /* WhatsApp colorish */
+        .contact-card:hover .icon-box.phone { color: #25D366; }
         .contact-card:hover .icon-box.mail { color: var(--af-orange); }
-
         .contact-info h4 {
             font-size: 0.9rem;
             color: var(--text-secondary);
             margin-bottom: 4px;
             font-weight: 500;
         }
-        
         .contact-info span {
             font-size: 1.1rem;
             font-weight: 600;
@@ -451,13 +413,11 @@
             border-top: 1px solid #e5e5e5;
         }
 
-        /* --- АНИМАЦИИ --- */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- МОБИЛЬНАЯ ВЕРСИЯ --- */
         @media (max-width: 900px) {
             .hero h1 { font-size: 2.5rem; }
             .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
@@ -466,7 +426,7 @@
             .bento-stats { order: 3; }
             .career-grid { grid-template-columns: 1fr; }
             .services-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
-            .nav-menu { display: none; } /* Можно добавить JS для меню, пока скрываем для чистоты */
+            .nav-menu { display: none; }
             header { top: 10px; max-width: 90%; }
         }
     </style>
@@ -488,26 +448,26 @@
     <!-- Главный экран -->
     <section class="hero">
         <div class="container">
-            <!-- Бейджи для статуса -->
+            <!-- Бейджи (обновлено) -->
             <div class="hero-badges">
+                <div class="badge">СУНЦ МГУ</div>
                 <div class="badge">МГУ им. Ломоносова</div>
-                <div class="badge">Высшая категория</div>
                 <div class="badge">International Tutor</div>
             </div>
 
             <h1>Математика и Информатика.<br>Системный подход.</h1>
-            <p>Преподаватель высшей категории. Ex-CEO с опытом управления международным бизнесом. Готовлю победителей олимпиад и студентов ведущих вузов мира.</p>
+            <p>Преподаватель высшей категории. Ex-CEO с опытом управления бизнесом. Готовлю победителей олимпиад и студентов ведущих вузов мира.</p>
             <a href="#contacts" class="btn">Связаться со мной</a>
         </div>
     </section>
 
-    <!-- Обо мне (Bento Grid) -->
+    <!-- Обо мне -->
     <section id="about" class="section">
         <div class="container">
             <div class="bento-grid">
                 <!-- Основной текст -->
                 <div class="bento-card bento-main">
-                    <h2>Олег Плешков</h2>
+                    <h2>Плешков Олег Александрович</h2>
                     <p>Я преподаватель высшей категории по математике и информатике. Выпускник факультета <strong>ВМК МГУ им. Ломоносова</strong>.</p>
                     <p>Мой подход сочетает строгую академическую базу и реальный бизнес-опыт. С 2007 по 2020 год я прошел путь от менеджера до <strong>CEO</strong> крупной компании (клиенты: Аэрофлот, PepsiCo, X5 Retail Group).</p>
                     <p>Сегодня я занимаюсь тем, что люблю больше всего — учу думать. Мои ученики живут в России, США, Испании, Австрии, Германии и на Кипре.</p>
@@ -535,7 +495,7 @@
                 </div>
             </div>
 
-            <!-- Сетка опыта (Career Grid) -->
+            <!-- Сетка опыта -->
             <div id="experience" class="career-grid">
                 <div class="career-card">
                     <i class="fas fa-chalkboard-teacher career-icon"></i>
@@ -559,7 +519,7 @@
         </div>
     </section>
 
-    <!-- Образовательные треки -->
+    <!-- Образовательные треки (3 колонки: Математика, Олимпиады, Информатика) -->
     <section id="services" class="section">
         <div class="container">
             <div class="section-header">
@@ -568,38 +528,37 @@
             </div>
 
             <div class="services-grid">
-                <!-- Карточка 1 -->
+                <!-- Карточка 1: Школьная Математика -->
                 <div class="service-card">
                     <div class="card-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Математика">
                     </div>
                     <div class="card-content">
-                        <h3>Математика & Олимпиады</h3>
-                        <p>ЕГЭ, ОГЭ (профиль). Подготовка к перечневым олимпиадам. Методы решения задач с параметрами.</p>
+                        <h3>Математика (ЕГЭ/ОГЭ)</h3>
+                        <p>Профильный уровень. Подготовка к поступлению в вузы, закрытие пробелов, систематизация знаний.</p>
                     </div>
                 </div>
 
-                <!-- Карточка 2 -->
+                <!-- Карточка 2: Олимпиадная математика -->
                 <div class="service-card">
                     <div class="card-image-wrapper">
-                        <!-- Картинка Информатика -->
+                        <!-- Изображение Кубок/Успех -->
+                        <img src="https://images.unsplash.com/photo-1453733190371-0a9bedd82893?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Олимпиады">
+                    </div>
+                    <div class="card-content">
+                        <h3>Олимпиадная математика</h3>
+                        <p>Перечневые олимпиады (Физтех, Ломоносов, Высшая проба). Решение нестандартных задач.</p>
+                    </div>
+                </div>
+
+                <!-- Карточка 3: Информатика -->
+                <div class="service-card">
+                    <div class="card-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Информатика">
                     </div>
                     <div class="card-content">
                         <h3>Информатика</h3>
                         <p>Программирование, алгоритмы, КЕГЭ. Практические аспекты сдачи экзаменов на максимальный балл.</p>
-                    </div>
-                </div>
-
-                <!-- Карточка 3 -->
-                <div class="service-card">
-                    <div class="card-image-wrapper">
-                        <!-- Физика/Наука -->
-                        <img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Физика">
-                    </div>
-                    <div class="card-content">
-                        <h3>Физика</h3>
-                        <p>Школьный курс и экзамены. Понимание физических процессов через математический аппарат.</p>
                     </div>
                 </div>
             </div>
@@ -617,11 +576,11 @@
             <div class="contact-container">
                 <div class="contact-grid">
                     <!-- Phone/WhatsApp -->
-                    <a href="tel:+35797815112" class="contact-card">
-                        <div class="icon-box phone"><i class="fas fa-phone-alt"></i></div>
+                    <a href="https://wa.me/79104595278" target="_blank" class="contact-card">
+                        <div class="icon-box phone"><i class="fab fa-whatsapp"></i></div>
                         <div class="contact-info">
                             <h4>Телефон / WhatsApp</h4>
-                            <span>+357 97 815112</span>
+                            <span>+7 (910) 459-52-78</span>
                         </div>
                     </a>
 
