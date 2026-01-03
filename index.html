@@ -73,6 +73,11 @@
             border-radius: 100px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            width: fit-content;
         }
 
         .nav-menu {
@@ -81,6 +86,8 @@
             font-size: 0.9rem;
             font-weight: 600;
             align-items: center;
+            justify-content: center;
+            flex: 1;
         }
 
         .nav-link {
@@ -90,6 +97,41 @@
 
         .nav-link:hover {
             color: var(--af-blue-accent);
+        }
+
+        .nav-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: var(--af-blue-dark);
+            color: #fff;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-toggle-line {
+            width: 20px;
+            height: 2px;
+            background: currentColor;
+            display: block;
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        nav.open .nav-toggle-line:nth-child(1) {
+            transform: translateY(5px) rotate(45deg);
+        }
+
+        nav.open .nav-toggle-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        nav.open .nav-toggle-line:nth-child(3) {
+            transform: translateY(-5px) rotate(-45deg);
         }
 
         /* --- ГЛАВНЫЙ ЭКРАН --- */
@@ -220,20 +262,17 @@
         }
         .bento-photo {
             height: 350px;
-            background: url('sait1.jpg') center/cover;
             border-radius: var(--radius);
-            position: relative;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
         }
-        .photo-badge {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background: rgba(255,255,255,0.9);
-            padding: 10px 20px;
-            border-radius: 12px;
-            font-weight: 600;
-            color: var(--af-blue-dark);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .bento-photo picture,
+        .bento-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         .bento-stats {
             display: flex;
@@ -418,6 +457,29 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        @media (max-width: 1024px) {
+            .hero { background-attachment: scroll; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+            .hero { background-attachment: scroll; }
+        }
+
+        @media (hover: none) {
+            .btn:hover,
+            .service-card:hover,
+            .contact-card:hover {
+                transform: none;
+            }
+            .service-card:hover .card-image-wrapper img {
+                transform: none;
+            }
+        }
+
         @media (max-width: 900px) {
             .hero h1 { font-size: 2.5rem; }
             .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
@@ -426,8 +488,28 @@
             .bento-stats { order: 3; }
             .career-grid { grid-template-columns: 1fr; }
             .services-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto; }
-            .nav-menu { display: none; }
             header { top: 10px; max-width: 90%; }
+            nav {
+                width: 100%;
+                justify-content: space-between;
+                padding: 12px 20px;
+            }
+            .nav-toggle { display: flex; }
+            .nav-menu {
+                position: absolute;
+                top: calc(100% + 15px);
+                right: 0;
+                width: min(280px, 80vw);
+                flex-direction: column;
+                gap: 15px;
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 24px;
+                padding: 20px;
+                box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+                border: 1px solid rgba(0,0,0,0.04);
+                display: none;
+            }
+            nav.open .nav-menu { display: flex; }
         }
     </style>
 </head>
@@ -436,7 +518,12 @@
     <!-- Навигация -->
     <header>
         <nav>
-            <ul class="nav-menu">
+            <button class="nav-toggle" type="button" aria-label="Переключить меню" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+            </button>
+            <ul class="nav-menu" id="primary-navigation">
                 <li><a href="#about" class="nav-link">Об авторе</a></li>
                 <li><a href="#experience" class="nav-link">Опыт</a></li>
                 <li><a href="#services" class="nav-link">Программа</a></li>
@@ -475,7 +562,10 @@
 
                 <!-- Фото -->
                 <div class="bento-card bento-photo">
-                    <div class="photo-badge">Ларнака, Кипр</div>
+                    <picture>
+                        <source srcset="sait1.jpg" type="image/jpeg">
+                        <img src="sait1.jpg" alt="Портрет Олега Плешкова" loading="lazy" decoding="async">
+                    </picture>
                 </div>
 
                 <!-- Статистика -->
@@ -531,7 +621,7 @@
                 <!-- Карточка 1: Школьная Математика -->
                 <div class="service-card">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Математика">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Математика" loading="lazy" decoding="async">
                     </div>
                     <div class="card-content">
                         <h3>Математика (ЕГЭ/ОГЭ)</h3>
@@ -543,7 +633,7 @@
                 <div class="service-card">
                     <div class="card-image-wrapper">
                         <!-- Изображение Кубок/Успех -->
-                        <img src="https://images.unsplash.com/photo-1453733190371-0a9bedd82893?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Олимпиады">
+                        <img src="https://images.unsplash.com/photo-1453733190371-0a9bedd82893?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Олимпиады" loading="lazy" decoding="async">
                     </div>
                     <div class="card-content">
                         <h3>Олимпиадная математика</h3>
@@ -554,7 +644,7 @@
                 <!-- Карточка 3: Информатика -->
                 <div class="service-card">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Информатика">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Информатика" loading="lazy" decoding="async">
                     </div>
                     <div class="card-content">
                         <h3>Информатика</h3>
@@ -612,6 +702,40 @@
             <p style="font-size: 0.75rem; color: #aaa; margin-top: 5px;">Travelling • Photography • Skiing</p>
         </div>
     </footer>
+
+    <script>
+        (function() {
+            const nav = document.querySelector('nav');
+            const toggle = document.querySelector('.nav-toggle');
+            const menu = document.getElementById('primary-navigation');
+
+            if (!nav || !toggle || !menu) {
+                return;
+            }
+
+            const closeMenu = () => {
+                nav.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            };
+
+            toggle.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            menu.addEventListener('click', (event) => {
+                if (event.target.classList.contains('nav-link')) {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!nav.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
 
 </body>
 </html>
